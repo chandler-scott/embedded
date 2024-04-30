@@ -9,6 +9,9 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
+    export EMBEDDED_ROOT_DIR=$PWD
+    export EMBEDDED_BUILD_DIR=$PWD/build
+    export EMBEDDED_SRC_DIR=$PWD/src
     echo "Environment ready for Embedded Development."
   '';
 }
