@@ -22,7 +22,7 @@ def main():
 
     print(f"Flashing the binary: {args.binary} on port {args.port}")
     try:
-        subprocess.run(['avrdude', '-p', mcu, '-c', programmer, '-P', args.port, '-b', str(baud), '-D', '-U', f'flash:w:{args.binary}:i'],
+        subprocess.run(['avrdude', '-p', mcu, '-c', programmer, '-P', args.port, '-b', str(baud), '-D', '-U', f'flash:w:build/{args.binary}:i'],
                        check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}", file=sys.stderr)

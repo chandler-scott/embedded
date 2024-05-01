@@ -19,3 +19,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.scripts]
 build_tool = "tools.build_tool:main"
 flash_tool = "tools.flash_tool:main"
+uart_terminal = "tools.uart_terminal:main"
