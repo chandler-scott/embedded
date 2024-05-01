@@ -1,0 +1,21 @@
+# pyproject.toml
+
+[tool.poetry]
+name = "tools"
+version = "0.1.0"
+description = "Tools for Embedded Systems Programming"
+authors = ["Chandler Scott <scottcd1@etsu.edu>"]
+packages = [{include = "tools"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pyserial = "^3.5"
+argparse = "1.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+build_tool = "tools.build_tool:main"
+flash_tool = "tools.flash_tool:main"
