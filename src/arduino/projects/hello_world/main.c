@@ -1,20 +1,19 @@
 #include "arduino_uart.h"
+#include <string.h>
 
 int main() {
-    // Initialize UART
+    // initialize UART
     uart_init();
     uint8_t receive_buffer[UART_BUFFER_SIZE];
 
     while(1) {
-        // Use printf and scanf as usual
-        printf("Enter a message:\r\n"); 
-
-        // uart_read(receive_buffer);
+        printf("Enter a message:\n");
+        fflush(stdout);
+       // fgets(receive_buffer, UART_BUFFER_SIZE, stdin);
         gets(receive_buffer);
         printf("-- %s\n", receive_buffer);
+        fflush(stdout);
     }
 
-    // End of program
     return 0;
 }
-

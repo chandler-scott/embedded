@@ -14,17 +14,19 @@ def uart_coms(port, baud_rate):
         print(f"Connected to {port} at {baud_rate} bps.")
         data = ser.readline()
         if data:
-            pass
+            print(data.decode().strip('\n')) 
         # Continuously read data from the serial port and print it
         while True:
             user_input = input('>>') + '\r\n' 
             ser.write(user_input.encode())
 
             data = ser.readline()
-            print(f'>{data.decode()}')                
+            if data: 
+                print(data.decode().strip('\n')) 
+
             data = ser.readline()
             if data: 
-                print(f'>{data.decode()}')                
+                print(data.decode().strip('\n')) 
     except serial.SerialException as e:
         print(f"Error opening serial port {port}: {e}")
     except KeyboardInterrupt:

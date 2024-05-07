@@ -11,7 +11,7 @@ import sys
 def main():
     parser = argparse.ArgumentParser(description='Flash tool script to upload binaries to the microcontroller with specified port')
     parser.add_argument('-b', '--binary', type=str, required=True, help='Path to binary file')
-    parser.add_argument('-p', '--port', type=str, required=True, help='Port to upload to')
+    parser.add_argument('-p', '--port', type=str, default="/dev/ttyACM0", help='Port to upload to')
 
     args = parser.parse_args()
 
