@@ -17,9 +17,13 @@ def uart_coms(port, baud_rate):
             print(data.decode().strip('\n')) 
         # Continuously read data from the serial port and print it
         while True:
-            user_input = input('>>') + '\r\n' 
+            user_input = input('>> ') + '\n' 
             ser.write(user_input.encode())
 
+            data = ser.readline()
+            if data: 
+                print(data.decode().strip('\n')) 
+            
             data = ser.readline()
             if data: 
                 print(data.decode().strip('\n')) 
